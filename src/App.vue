@@ -1,28 +1,40 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <Table />
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import Table from './components/Table';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    name: 'App',
+    components: {
+      Table,
+    },
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        color: #414141;
+        font-size: 14px;
+    }
+
+    #app {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 1024px) and (max-height: 1366px) {
+        #app {
+            max-width: 100%;
+        }
+    }
 </style>
