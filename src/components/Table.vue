@@ -11,7 +11,7 @@
 
   import shortenNumber from '../mixins/shortenNumber';
 
-  import { UPDATE_INTERVAL, DELETE_CLASS_TIME } from '../constants';
+  import {UPDATE_INTERVAL, DELETE_CLASS_TIME} from '../constants';
 
   export default {
     name: 'Table',
@@ -52,19 +52,18 @@
       const response = await fetch('https://api.coincap.io/v2/assets');
 
       const {data} = await response.json();
-      const sortedCurrencies = data.sort((a, b) => b.marketCapUsd - a.marketCapUsd);
 
-      this.currencies = sortedCurrencies;
+      this.currencies = data.sort((a, b) => b.marketCapUsd - a.marketCapUsd).slice(0, 30);
 
-      const initialRowsClasses = sortedCurrencies.reduce((accum, currency) => {
+      const initialRowsClasses = this.currencies.reduce((accum, currency) => {
         accum[currency.id] = null;
 
         return accum;
       }, {});
 
-      this.rowsClasses = { ...this.rowsClasses, ...initialRowsClasses };
+      this.rowsClasses = {...this.rowsClasses, ...initialRowsClasses};
 
-      const assets = sortedCurrencies.map(crypt => crypt.id).join(',');
+      const assets = this.currencies.map(crypt => crypt.id).join(',');
       const pricesWs = new WebSocket(`wss://ws.coincap.io/prices?assets=${assets}`);
       const buffer = {prices: {}};
 
@@ -86,7 +85,15 @@
 
 <style scoped>
     .table {
+        margin: 0 auto;
+        width: 50%;
         display: block;
         box-shadow: rgba(0, 0, 0, 0.4) 0 1px 7px -1px;
+    }
+
+    @media (max-width: 1024px) and (max-height: 1366px) {
+        .table {
+            width: 100%;
+        }
     }
 </style>

@@ -1,24 +1,8 @@
-# coincap
+# vue-coincap
 
-## Project setup
-```
-npm install
-```
+Веб-приложение, отображающее курс криптовалют в реальном времени. В таблице представлены такие данные, как стоимость криптовалют, их рыночная капитализация и суточный объем.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Демонстрация
+![demo](https://media.giphy.com/media/f6gO2SSt4pgva4pGMX/giphy.gif)
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![screenshot](https://github.com/AstR0x/astr0x.github.io/blob/master/screenshots/vue-coincap.png)

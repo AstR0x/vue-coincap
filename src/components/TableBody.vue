@@ -31,7 +31,7 @@
         display: block;
         visibility: hidden;
         overflow-y: scroll;
-        max-height: 95vh;
+        max-height: 80vh;
     }
 
     .tbody:focus,

@@ -17,7 +17,6 @@
 
 <style scoped>
     .table-header {
-        height: 5vh;
         display: block;
     }
 
@@ -28,11 +27,12 @@
     }
 
     .header-cell {
+        background-color: #000;
+        color: #fff;
         width: 25%;
         padding: 10px;
         text-align: center;
         border: 1px solid #fff;
-        background-color: rgba(253, 255, 240, 0.6);
     }
 
     @media (max-width: 1024px) and (max-height: 1366px) {
